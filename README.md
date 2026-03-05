@@ -24,17 +24,22 @@ graph LR
 
 ## 📂 Repository Structure
 ```text
-AI-Cup-2024-Power-Prediction/
-├── competition-guidelines/       # 競賽官方說明文件與範例程式
-├── sample-data/
-│   ├── L1_Train.csv              # 測站一之微氣候訓練數據（共 17 個觀測站）
-│   └── 2024-01全天空日射量.csv     # 一月份全天空日射量（外部資料來自中央氣象署，含 1-10 月）
+AI-Cup-2020-Mango-Image-Classification/
+├── competition-guidelines/       # 競賽官方說明文件
+├── data/                         
+│   ├── sample-images/            # 原始芒果影像樣本，包含 A, B, C 三個等級
+│   │   ├── sample_A.jpg          
+│   │   ├── sample_B.jpg          
+│   │   └── sample_C.jpg          
+│   └── processed/                # 經裁剪與去模糊處理之影像樣本
+│       ├── sample_A_processed.jpg 
+│       ├── sample_B_processed.jpg 
+│       └── sample_C_processed.jpg 
 ├── scripts/
-│   └── power_prediction.ipynb    # 程式碼：涵蓋探索式資料分析、資料前處理、訓練與生成預測結果
+│   ├── crop.ipynb             # 影像裁剪程式碼
+│   ├── deblur.ipynb           # 使用 SRN-Deblur 
+│   └── mango_training.ipynb   # 主程式碼
 ├── reports/                      
-│   ├── report_slides.pdf         # 專案簡報
-│   └── report.pdf                # 專案完整技術報告
-├── checkpoints/                  # 存放訓練完成之模型權重
-├── submission-prediction-csvs/   # 最終上傳至 AI CUP 系統之預測 csv 檔
+│   └── report.pdf             # 專案技術報告
 └── README.md
 ```
