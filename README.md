@@ -6,15 +6,7 @@
 graph LR
     A["Raw Mango Images"] --> B["Image Cropping (crop.ipynb)"]
     B --> C["Image Deblurring (deblur.ipynb)"]
-    
-    subgraph Training_Phase["Model Training & Optimization"]
-        C --> D["Feature Extraction (Backbones)"]
-        D --> E["ResNet50 / DenseNet201"]
-        D --> F["ResNeSt26d / SeresNext26d"]
-        E --> G["Mish Activation & Ranger Optimizer"]
-        F --> G
-        G --> H["FP16 Mixed Precision Training"]
-    end
+    C --> D["Model Training & Optimization"]
 
     subgraph Inference_Phase["Inference & Ensemble"]
         H --> I["Test Time Augmentation (TTA)"]
@@ -28,7 +20,7 @@ graph LR
     classDef premiumGreen fill:#2D5C4A,stroke:#1F4234,stroke-width:2px,color:#ffffff
 
     %% 套用配色
-    class B,C,D,E,F,G,H,I,J premiumBlue
+    class B,C,D,H,I,J premiumBlue
     class A,K premiumGreen
 ```
 
