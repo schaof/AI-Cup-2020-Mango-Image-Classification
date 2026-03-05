@@ -7,8 +7,8 @@ graph LR
     A["Raw Mango Images"] --> B["Image Cropping (crop.ipynb)"]
     B --> C["Image Deblurring (deblur.ipynb)"]
     C --> D["Model Training and Hyperparameter Tuning"]
-    D --> E["Test Time Augmentation (TTA)"]
-    E --> F["Majority Voting (Ensemble)"]  
+    D --> E["Test Time Augmentation"]
+    E --> F["Grade Classification by Majority Voting"]  
     F --> G(["Final Submission CSV Generation"])
 
     %% 視覺設定：定義企業級深色主題
