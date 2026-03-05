@@ -24,7 +24,7 @@ graph LR
 
 ## 📂 Repository Structure
 ```text
-AI-Cup-2024-Power-Prediction/
+AI-Cup-2020-Mango-Image-Classification/
 ├── competition-guidelines/       # 競賽官方說明文件與範例程式
 ├── sample-data/
 │   ├── L1_Train.csv              # 測站一之微氣候訓練數據（共 17 個觀測站）
