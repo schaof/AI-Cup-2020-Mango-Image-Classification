@@ -26,11 +26,11 @@ graph LR
 ```text
 AI-Cup-2020-Mango-Image-Classification/
 ├── competition-guidelines/        # 競賽官方說明文件
-├── data/                         
+├── data/                          
 │   ├── sample-images/             # 原始芒果影像樣本，包含 A, B, C 三個等級
-│   │   ├── sample_A.jpg          
-│   │   ├── sample_B.jpg          
-│   │   └── sample_C.jpg          
+│   │   ├── sample_A.jpg           
+│   │   ├── sample_B.jpg           
+│   │   └── sample_C.jpg           
 │   └── processed/                 # 經裁剪與去模糊處理之影像樣本
 │       ├── sample_A_processed.jpg 
 │       ├── sample_B_processed.jpg 
@@ -40,6 +40,6 @@ AI-Cup-2020-Mango-Image-Classification/
 │   ├── deblur.ipynb               # 影像去模糊處理程式碼
 │   └── mango.ipynb                # 主程式碼
 ├── report.pdf                     # 專案技術報告
-    submission-prediction-csvs     # 上傳結果    
+├── submission-prediction-csvs/    # 上傳結果     
 └── README.md
 ```
