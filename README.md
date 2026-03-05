@@ -4,8 +4,8 @@
 ## ⚙️ Workflow Architecture
 ```mermaid
 graph LR
-    A["Raw Mango Images"] --> B["Automated Cropping (crop.ipynb)"]
-    B --> C["SRN-Deblur Processing (deblur.ipynb)"]
+    A["Raw Mango Images"] --> B["Image Cropping (crop.ipynb)"]
+    B --> C["Image Deblurring (SRN-Deblur model; deblur.ipynb)"]
     
     subgraph Training_Phase["Model Training & Optimization"]
         C --> D["Feature Extraction (Backbones)"]
