@@ -28,8 +28,8 @@ graph LR
     classDef premiumGreen fill:#2D5C4A,stroke:#1F4234,stroke-width:2px,color:#ffffff
 
     %% 套用配色
-    class A,B,C,D,E,F,G,H,I,J premiumBlue
-    class K premiumGreen
+    class B,C,D,E,F,G,H,I,J premiumBlue
+    class A,K premiumGreen
 ```
 
 ## 📂 Repository Structure
