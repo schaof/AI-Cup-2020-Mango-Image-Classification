@@ -5,7 +5,7 @@
 ```mermaid
 graph LR
     A["Raw Mango Images"] --> B["Image Cropping (crop.ipynb)"]
-    B --> C["Image Deblurring (SRN-Deblur model; deblur.ipynb)"]
+    B --> C["Image Deblurring (deblur.ipynb)"]
     
     subgraph Training_Phase["Model Training & Optimization"]
         C --> D["Feature Extraction (Backbones)"]
