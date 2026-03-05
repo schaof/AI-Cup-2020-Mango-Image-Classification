@@ -6,22 +6,18 @@
 graph LR
     A["Raw Mango Images"] --> B["Image Cropping (crop.ipynb)"]
     B --> C["Image Deblurring (deblur.ipynb)"]
-    C --> D["Model Training & Optimization"]
-
-    subgraph Inference_Phase["Inference & Ensemble"]
-        H --> I["Test Time Augmentation (TTA)"]
-        I --> J["Majority Voting (Ensemble)"]
-    end
-    
-    J --> K(["Final Classification Result"])
+    C --> D["Model Training and Hyperparameter Tuning"]
+    D --> E["Test Time Augmentation (TTA)"]
+    E --> F["Majority Voting (Ensemble)"]  
+    F --> G(["Final Classification Result"])
 
     %% 視覺設定：定義企業級深色主題
     classDef premiumBlue fill:#2C356A,stroke:#1F264A,stroke-width:2px,color:#ffffff
     classDef premiumGreen fill:#2D5C4A,stroke:#1F4234,stroke-width:2px,color:#ffffff
 
     %% 套用配色
-    class B,C,D,H,I,J premiumBlue
-    class A,K premiumGreen
+    class B,C,D,E,F premiumBlue
+    class A,G premiumGreen
 ```
 
 ## 📂 Repository Structure
