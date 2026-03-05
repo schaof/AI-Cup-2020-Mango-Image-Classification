@@ -40,6 +40,6 @@ AI-Cup-2020-Mango-Image-Classification/
 │   ├── deblur.ipynb               # 影像去模糊處理程式碼
 │   └── mango.ipynb                # 主程式碼
 ├── report.pdf                     # 專案技術報告
-├── submission-prediction-csvs/    # 上傳結果     
+├── submission-prediction-csvs/    # 最終上傳至 AI CUP 系統之預測 csv 檔     
 └── README.md
 ```
