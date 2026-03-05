@@ -4,22 +4,32 @@
 ## ⚙️ Workflow Architecture
 ```mermaid
 graph LR
-        A["Raw Microclimate Data"]
-        B["Solar Radiation Data (External Data from Central Weather Administration)"]
-        A --> C["Data Preprocessing"]
-        B --> C
-        C --> D["Feature Engineering"]
-        D --> E["Model Training and Hyperparameter Tuning"]
-        E --> F["Solar Power Prediction"]
-        F --> G["Final Submission CSV Generation"]
+    A["Raw Mango Images"] --> B["Automated Cropping (crop.ipynb)"]
+    B --> C["SRN-Deblur Processing (deblur.ipynb)"]
+    
+    subgraph Training_Phase["Model Training & Optimization"]
+        C --> D["Feature Extraction (Backbones)"]
+        D --> E["ResNet50 / DenseNet201"]
+        D --> F["ResNeSt26d / SeresNext26d"]
+        E --> G["Mish Activation & Ranger Optimizer"]
+        F --> G
+        G --> H["FP16 Mixed Precision Training"]
+    end
 
-%% 視覺設定：定義企業級深色主題 (深色背景 + 白字避免無法閱讀)
-        classDef premiumBlue fill:#2C356A,stroke:#1F264A,stroke-width:2px,color:#ffffff
-        classDef premiumGreen fill:#2D5C4A,stroke:#1F4234,stroke-width:2px,color:#ffffff
+    subgraph Inference_Phase["Inference & Ensemble"]
+        H --> I["Test Time Augmentation (TTA)"]
+        I --> J["Majority Voting (Ensemble)"]
+    end
+    
+    J --> K(["Final Classification Result"])
 
-        %% 套用配色：主流程使用藍色，最終產出使用綠色
-        class C,D,E,F premiumBlue
-        class A,B,G premiumGreen
+    %% 視覺設定：定義企業級深色主題
+    classDef premiumBlue fill:#2C356A,stroke:#1F264A,stroke-width:2px,color:#ffffff
+    classDef premiumGreen fill:#2D5C4A,stroke:#1F4234,stroke-width:2px,color:#ffffff
+
+    %% 套用配色
+    class A,B,C,D,E,F,G,H,I,J premiumBlue
+    class K premiumGreen
 ```
 
 ## 📂 Repository Structure
